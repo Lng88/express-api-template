@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./build/bin/www",
-    "prestart": "babel ./src --outdir build",
+    "prestart": "babel ./src --out-dir build",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "runQuery": "babel-node ./src/utils/runQuery"
   },
   "keywords": [],
   "author": "",
